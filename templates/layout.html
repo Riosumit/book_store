@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <div class="name">
+            <img src="{% static 'img/logo.png' %}" alt="">
+            <div style="text-align: right; padding-left: 5px;"><h2> Book Store</h2><span style="font-size: 12px;">By Sumit</span></div>
+        </div>
+        <div class="sign">
+            <img src="{% static 'img/search.png' %}" alt="">
+            <a href="register"><button>Sign Up</button></a>
+            <a href="login"><button>Log In</button></a>
+        </div>
+    </nav>
+    {%block body%} {% endblock %}
+</body>
+</html>

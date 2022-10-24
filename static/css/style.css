@@ -1,0 +1,108 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+nav{
+    background-color: rgb(20 39 53);
+    color: beige;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 10px 3px 10px;
+}
+.name{
+    display: flex;
+    flex-direction: row;
+}
+.name img{
+    height: 40px;
+    width: 60px
+}
+.sign{
+    display: flex;
+    align-items: center;
+}
+.sign button{
+    padding: 5px;
+    background-color: rgb(46, 87, 139);
+    color: rgb(237, 252, 247);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 7px;
+    cursor: pointer;
+    margin: 5px;
+}
+.sign img{
+    width: 27px;
+    height: 27px;
+    margin-right: 10px;
+}
+.slider_box{
+    position: relative;
+    width: 90%;
+    margin: 0px auto;
+}
+.slider_box .left{
+    position: absolute;
+    top: 45%;
+    left: 10px;
+    border-radius: 3vw;
+    background-color: #00000087;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5vw;
+    height: 5vw;
+    font-size: 2.7vw;
+    cursor: pointer;
+    z-index: 2;
+}
+.slider_box .right{
+    position: absolute;
+    top: 45%;
+    right: 10px;
+    border-radius: 3vw;
+    background-color: #00000087;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5vw;
+    height: 5vw;
+    font-size: 2.7vw;
+    cursor: pointer;
+    z-index: 2;
+}
+.slider{
+    width: 100%;
+    margin: 30px auto;
+    overflow-x: hidden;
+}
+.slide{
+    width: fit-content;
+    transition: 0.7s;
+    display: inline-flex;
+}
+.slider img{
+    width: 90vw;
+}
+.section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: 10px auto;
+}
+.item_box{
+    border: 1px solid black;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.7vw;
+}
+.item_box img{
+    max-width: 90%;
+    height: auto;
+}
