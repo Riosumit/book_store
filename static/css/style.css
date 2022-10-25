@@ -10,10 +10,14 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 3px 10px 3px 10px;
+    position: sticky;
+    top: 0px;
+    z-index: 5;
 }
 .name{
     display: flex;
     flex-direction: row;
+    min-width: 200px;
 }
 .name img{
     height: 40px;
@@ -36,6 +40,32 @@ nav{
     width: 27px;
     height: 27px;
     margin-right: 10px;
+}
+.three_line{
+    display: none;
+    flex-direction: column;
+}
+.three_line .line{
+    height: 5px;
+    width: 35px;
+    margin: 2.5px;
+    border-radius: 5px;
+    background-color: rgb(46, 87, 139);
+}
+.sign_small{
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    border: 1px solid black;
+    display: none;
+    flex-direction: column;
+    z-index: 5;
+    padding: 10px;
+    background-color: #fff;
+}
+.sign_small button{
+    width: 100%;
+    border: none;
 }
 .slider_box{
     position: relative;
@@ -107,4 +137,14 @@ nav{
 .item_box img{
     width: 90%;
     max-height: auto;
+}
+
+
+@media only screen and (max-width: 405px){
+    .sign{
+        display: none;
+    }
+    .three_line{
+        display: flex;
+    }
 }

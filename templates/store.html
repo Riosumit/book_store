@@ -20,7 +20,7 @@
         {% for i in items %}
             <div class="item_box">
                 <img src="/media/{{i.img}}" alt="">
-                <div class="details"><p style="line-height: 1.3em !important; max-height: 2.6em;">{{i.book_name}}</p><p style="line-height: 1em !important; max-height: 2.3em; opacity: 0.9;">by {{i.Author}}</p><p style="line-height: 1.1em !important;max-height: 2.4em;">Price : <b>Rs {{i.price}}</b> </p></div>
+                <div class="details"><p style="line-height: 1.3em !important; max-height: 2.6em;">{{i.book_name}}</p><p style="line-height: 1em !important; max-height: 2.3em; font-size: 1.5vw; opacity: 0.9;">by {{i.Author}}</p><p style="line-height: 1.1em !important;max-height: 2.4em;">Price : <b>Rs {{i.price}}</b> </p></div>
             </div>
         {% endfor %}
     </div>

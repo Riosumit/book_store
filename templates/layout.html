@@ -12,14 +12,33 @@
     <nav>
         <div class="name">
             <img src="{% static 'img/logo.png' %}" alt="">
-            <div style="text-align: right; padding-left: 5px;"><h2> Book Store</h2><span style="font-size: 12px;">By Sumit</span></div>
+            <div style="text-align: right; padding-left: 5px;"><p style="text-align: left; font-size: 20px;"> Book Store</p><span style="font-size: 12px;">By Sumit</span></div>
         </div>
         <div class="sign">
             <img src="{% static 'img/search.png' %}" alt="">
             <a href="register"><button>Sign Up</button></a>
             <a href="login"><button>Log In</button></a>
         </div>
+        <div class="three_line" onclick="three_line()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
     </nav>
+    <div class="sign_small">
+        <a href="register"><button>Sign Up</button></a><hr>
+        <a href="login"><button>Log In</button></a>
+    </div>
     {%block body%} {% endblock %}
+    <script>
+        function three_line(){
+            if(document.getElementsByClassName('sign_small')[0].style.display=='flex'){
+                document.getElementsByClassName('sign_small')[0].style.display='none';
+            }
+            else{
+                document.getElementsByClassName('sign_small')[0].style.display='flex';
+            }
+        }
+    </script>
 </body>
 </html>
