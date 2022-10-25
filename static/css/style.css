@@ -126,7 +126,7 @@ nav{
 }
 .item_box{
     border: 1px solid black;
-    width: 15%;
+    width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,7 +135,7 @@ nav{
     border-radius: 5px;
 }
 .item_box img{
-    width: 90%;
+    width: 100%;
     max-height: auto;
 }
 
