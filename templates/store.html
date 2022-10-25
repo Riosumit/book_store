@@ -16,13 +16,38 @@
         </div>
         <div class="right" onclick="slide_left()"> > </div>
     </div>
+    <h2>&nbsp; &nbsp;Popular collections</h2>
     <div class="section">
-        {% for i in items %}
-            <div class="item_box">
-                <img src="/media/{{i.img}}" alt="">
-                <div class="details"><p style="line-height: 1.3em !important; max-height: 2.6em;">{{i.book_name}}</p><p style="line-height: 1em !important; max-height: 2.3em; font-size: 1.5vw; opacity: 0.9;">by {{i.Author}}</p><p style="line-height: 1.1em !important;max-height: 2.4em;">Price : <b>Rs {{i.price}}</b> </p></div>
-            </div>
-        {% endfor %}
+        <div class="list">
+            {% for i in items %}
+                <div class="item_box">
+                    <img src="/media/{{i.img}}" alt="">
+                    <div class="details"><p style="font-size: 1rem;">{{i.book_name}}</p><p style="font-size: 0.7rem; opacity: 0.9;">by {{i.Author}}</p><p style="font-size: 0.9rem;">Price : <b>Rs {{i.price}}</b> </p></div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <h2>&nbsp; &nbsp;Best seller</h2>
+    <div class="section">
+        <div class="list">
+            {% for i in '1234567890' %}
+                <div class="item_box">
+                    <img src="/media/{{items.0.img}}" alt="">
+                    <div class="details"><p style="font-size: 1rem;">{{items.0.book_name}}</p><p style="font-size: 0.7rem; opacity: 0.9;">by {{items.0.Author}}</p><p style="font-size: 0.9rem;">Price : <b>Rs {{items.0.price}}</b> </p></div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <h2>&nbsp; &nbsp;Devas</h2>
+    <div class="section">
+        <div class="list">
+            {% for i in items %}
+                <div class="item_box">
+                    <img src="/media/{{i.img}}" alt="">
+                    <div class="details"><p style="font-size: 1rem;">{{i.book_name}}</p><p style="font-size: 0.7rem; opacity: 0.9;">by {{i.Author}}</p><p style="font-size: 0.9rem;">Price : <b>Rs {{i.price}}</b> </p></div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
     <script>
         var page = 0;
