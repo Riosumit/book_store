@@ -67,5 +67,19 @@
                 slide_left();
             }
         }, false)
+        setInterval(autoswipe, 5000);
+        function autoswipe(){
+            if(page==5){
+                page=0;
+                document.getElementsByClassName('slide')[0].style.transition = 'none';
+                document.getElementsByClassName('slide')[0].style.transform='translateX(-' + 0 + 'vw)';
+                document.getElementsByClassName('left')[0].style.display='none';
+                document.getElementsByClassName('right')[0].style.display='flex';
+            }
+            else{
+                document.getElementsByClassName('slide')[0].style.transition = '0.7s';
+                slide_left();
+            }
+        }
     </script>
 {% endblock %}
