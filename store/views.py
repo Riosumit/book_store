@@ -17,18 +17,23 @@ def register(request):
     dob = request.POST.get('dob','')
     phone = request.POST.get('phone','')
     password = request.POST.get('password','')
+    msg=''
     if(name!='' and email!='' and dob!='' and phone!='' and password!=''):
         register = user(name=name, email=email, dob=dob, contact=phone, password=password)
         register.save()
-        return redirect('home')
+        msg="You have successfully registered"
+    param = {'msg':msg}
     return render(request, 'register.html')
 
 def login(request):
     name = request.POST.get('name','')
     password = request.POST.get('password','')
     msg = ''
-    loggedin = request.session['loggedin']
-    if(loggedin==True):
+    try:
+        loggedin = request.session['loggedin']
+    except:
+        loggedin = False
+    if loggedin:
         return redirect('home')
     if(name!='' and password!=''):
         id = user.objects.filter(name=name)
