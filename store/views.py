@@ -10,8 +10,9 @@ loggedin = False
 # Create your views here.
 
 def home(request):
+    global loggedin
     items = books.objects.all()
-    param={'items':items}
+    param={'items':items, 'login':loggedin}
     return render(request, 'store.html', param)
 
 def register(request):
