@@ -3,16 +3,12 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from store.models import books, user
 
-# Variables
-
-loggedin = False
-
 # Create your views here.
 
+
 def home(request):
-    global loggedin
     items = books.objects.all()
-    param={'items':items, 'login':loggedin}
+    param={'items':items}
     return render(request, 'store.html', param)
 
 def register(request):
@@ -28,17 +24,17 @@ def register(request):
     return render(request, 'register.html')
 
 def login(request):
-    global loggedin
     name = request.POST.get('name','')
     password = request.POST.get('password','')
     msg = ''
-    if loggedin:
+    loggedin = request.session['loggedin']
+    if(loggedin==True):
         return redirect('home')
     if(name!='' and password!=''):
         id = user.objects.filter(name=name)
         if(id):
             if(id[0].password==password):
-                loggedin = True
+                request.session['loggedin']=True
                 return redirect('home')
             else:
                 msg='Incorrect Password'
