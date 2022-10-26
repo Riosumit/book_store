@@ -1,0 +1,142 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}Store{% endblock %}
+{% block body %}
+    <form action="register" id="register" method="post">{% csrf_token %}
+        <label for="name">Name : <br>
+            <input type="text" name="name"><span id="err_name"></span>
+        </label><br><br>
+        <label for="email">Email : <br>
+            <input type="email" name="email"><span id="err_email"></span>
+        </label><br><br>
+        <label for="dob">Date of Birth : <br>
+            <input type="date" name="dob"><span id="err_dob"></span>
+        </label><br><br>
+        <label for="phone">Phone Number : <br>
+            <input type="text" name="phone"><span id="err_phone"></span>
+        </label><br><br>
+        <label for="password">Password : <br>
+            <input type="text" name="password"><span id="err_password"></span>
+        </label><br><br>
+        <label for="cpassword">Confirm Password : <br>
+            <input type="text" name="cpassword"><span id="err_cpassword"></span>
+        </label><br><br>
+        <button type="submit">Register</button>
+    </form>
+    <script>
+        // Name validation
+        document.getElementsByName('name')[0].addEventListener('input', check_name);
+        function check_name(e){
+            value=e.target.value;
+            if(/\d/.test(value)){
+                document.getElementById('err_name').innerText="Name must contain only Alphabhets";
+            }
+            else{
+                document.getElementById('err_name').innerText="";
+            }
+        }
+
+        // Email validation
+        // document.getElementsByName('email')[0].addEventListener('input', (e) => {
+        //     value==e.target.value;
+        //     if(value.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9]+)*$/)){
+        //         document.getElementById('err_email').innerText="Name must contain only Alphabhets";
+        //     }
+        //     else{
+        //         console.log("hello");
+        //         document.getElementById('err_email').innerText="";
+        //     }
+        // })
+
+        // Age validation
+        document.getElementsByName('dob')[0].addEventListener('change', check_age);
+        function check_age(e){
+            value=e.target.value;
+            d1 = new Date(value);
+            d2 = new Date;
+            d = (d2-d1)/(1000*3600*24*365);
+            if(d<10){
+                document.getElementById('err_dob').innerText="You must be above 10";
+            }
+            else{
+                document.getElementById('err_dob').innerText="";
+            }
+        }
+        // Phone validation
+        document.getElementsByName('phone')[0].addEventListener('change', check_phone);
+        function check_phone(e){
+            console.log("sumit")
+            value=e.target.value;
+            if(value.match(/[a-z]/g) || value.match(/[A-Z]/g)){
+                document.getElementById('err_phone').innerText="Name must contain only digits";
+            }
+            else if(length(value)!=10){
+                document.getElementById('err_phone').innerText="Phone Number must be of 10 digits";
+            }
+            else{
+                document.getElementById('err_phone').innerText="";
+            }
+        }
+        // Password validation
+        valid_p = 0;
+        document.getElementsByName('password')[0].addEventListener('input', check_password);
+        function check_password(e){
+            value=e.target.value;
+            strength = 0;
+            if(value.match(/[a-z]/g)){
+                strength++;
+            }
+            if(value.match(/[A-Z]/g)){
+                strength++;
+            }
+            if(value.match(/[0-9]/g)){
+                strength++;
+            }
+            a=0;
+            if(strength == 1){
+                document.getElementById('err_password').innerText="Password is too weak";
+                document.getElementById('err_password').style.color="red";
+                valid_p=0;
+            }
+            else if(strength == 2){
+                document.getElementById('err_password').innerText="Password is weak";
+                document.getElementById('err_password').style.color="red";
+                valid_p=0;
+            }
+            else if(value.length<8 && value.length!=0){
+                document.getElementById('err_password').innerText="Password must contain atleast 8 characters";
+                document.getElementById('err_password').style.color="red";
+                valid_p=0;
+            }
+            else if(strength == 3){
+                document.getElementById('err_password').innerText="Strong Password";
+                document.getElementById('err_password').style.color="green";
+                document.getElementsByName('password')[0].style.backgroundColor="lightgreen"
+                valid_p=1;
+            }
+        }
+        // Confirm Password validation
+        document.getElementsByName('cpassword')[0].addEventListener('input', check_cpassword);
+        function check_cpassword(e){
+            value=e.target.value;
+            password = document.getElementsByName('password')[0].value;
+            if(password == ""){
+                document.getElementById('err_password').innerText="First fill this column";
+                document.getElementById('err_password').style.color="red";
+                document.getElementsByName('cpassword')[0].value="";
+            }
+            else if(valid_p == 0){
+                document.getElementById('err_password').innerText="First enter a valid password";
+                document.getElementById('err_password').style.color="red";
+                document.getElementsByName('cpassword')[0].value="";
+            }
+            else if(value != password){
+                document.getElementById('err_cpassword').innerText="Confirm password doesn't match";
+            }
+            else{
+                document.getElementsByName('cpassword')[0].style.backgroundColor="lightgreen"
+                document.getElementById('err_cpassword').innerText="";
+            }
+        }
+    </script>
+{% endblock %}

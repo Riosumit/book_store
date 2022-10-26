@@ -4,7 +4,6 @@
 }
 nav{
     background-color: rgb(20 39 53);
-    color: beige;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -13,6 +12,14 @@ nav{
     position: sticky;
     top: 0px;
     z-index: 5;
+}
+nav a{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: beige;
 }
 .name{
     display: flex;
@@ -150,6 +157,10 @@ nav{
 .item_box img{
     width: 80%;
     max-height: auto;
+}
+.error_msg{
+    font-weight: 700;
+    color: red;
 }
 
 

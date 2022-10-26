@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}Store{% endblock %}
+{% block body %}
+    <form action="login" id="register" method="post">{% csrf_token %}
+        <label for="name">Username : <br>
+            <input type="text" name="name" value="{{name}}">
+        </label><br><br>
+        <label for="password">Password : <br>
+            <input type="password" name="password" value="{{password}}">
+        </label><br><br>
+        <p class="error_msg">{{msg}}</p>
+        <button type="submit">Login</button>
+    </form>
+{% endblock %}

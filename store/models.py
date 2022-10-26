@@ -1,4 +1,5 @@
 from distutils.command.upload import upload
+import email
 from unicodedata import category
 from django.db import models
 
@@ -17,3 +18,14 @@ class books(models.Model):
 
     def __str__(self):
         return self.book_name
+
+class user(models.Model):
+    id = models.AutoField
+    name = models.CharField(max_length=50)
+    email = models.EmailField()
+    dob = models.DateField()
+    contact = models.IntegerField(default=0)
+    password = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
