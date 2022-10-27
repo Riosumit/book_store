@@ -64,14 +64,15 @@
             }
         }
         // Phone validation
-        document.getElementsByName('phone')[0].addEventListener('change', check_phone);
+        document.getElementsByName('phone')[0].addEventListener('input', check_phone);
         function check_phone(e){
             console.log("sumit")
             value=e.target.value;
+            let len = value.length
             if(value.match(/[a-z]/g) || value.match(/[A-Z]/g)){
-                document.getElementById('err_phone').innerText="Name must contain only digits";
+                document.getElementById('err_phone').innerText="Phone must contain only digits";
             }
-            else if(length(value)!=10){
+            else if(len!=10){
                 document.getElementById('err_phone').innerText="Phone Number must be of 10 digits";
             }
             else{
