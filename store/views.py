@@ -7,8 +7,12 @@ from store.models import books, user
 
 
 def home(request):
+    try:
+        loggedin = request.session['loggedin']
+    except:
+        loggedin = False
     items = books.objects.all()
-    param={'items':items}
+    param={'items':items, 'loggedin': loggedin}
     return render(request, 'store.html', param)
 
 def register(request):
@@ -47,3 +51,7 @@ def login(request):
             msg="Username Does not exists"
     param = {'name': name, 'password': password, 'msg': msg}
     return render(request, 'login.html', param)
+
+def logout(request):
+    del request.session['loggedin']
+    return redirect('home')

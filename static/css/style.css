@@ -162,7 +162,7 @@ nav a{
     font-weight: 700;
     color: red;
 }
-.error_msg{
+.success_msg{
     font-weight: 700;
     color: rgb(0, 163, 0);
 }
