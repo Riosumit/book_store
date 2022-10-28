@@ -11,21 +11,13 @@
 <body>
     <nav>
         <div class="name">
-            <a href="/store">
             <img src="{% static 'img/logo.png' %}" alt="">
             <div style="text-align: right; padding-left: 5px;"><p style="text-align: left; font-size: 20px;"> Book Store</p><span style="font-size: 12px;">By Sumit</span></div>
-            </a>
         </div>
         <div class="sign">
-            {% if loggedin %}
-                <img src="{% static 'img/search.png' %}" alt="">
-                <a href="cart"><button>Cart</button></a>
-                <a href="logout"><button>LogOut</button></a>
-            {% else %}
-                <img src="{% static 'img/search.png' %}" alt="">
-                <a href="register"><button>Sign Up</button></a>
-                <a href="login"><button>Log In</button></a>
-            {% endif %}
+            <img src="{% static 'img/search.png' %}" alt="">
+            <a href="register"><button>Sign Up</button></a>
+            <a href="login"><button>Log In</button></a>
         </div>
         <div class="three_line" onclick="three_line()">
             <div class="line"></div>
@@ -34,13 +26,8 @@
         </div>
     </nav>
     <div class="sign_small">
-        {% if loggedin %}
-            <a href="cart"><button>Cart</button></a>
-            <a href="logout"><button>LogOut</button></a>
-        {% else %}
-            <a href="register"><button>Sign Up</button></a>
-            <a href="login"><button>Log In</button></a>
-        {% endif %}
+        <a href="register"><button>Sign Up</button></a><hr>
+        <a href="login"><button>Log In</button></a>
     </div>
     {%block body%} {% endblock %}
     <script>

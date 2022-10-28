@@ -1,25 +1,33 @@
 *{
     margin: 0px;
     padding: 0px;
+    font-family:sans-serif;
+    
+}
+/* body{
+    background-image : url(http://api.thumbr.it/whitenoise-361x370.png?background=ffffffff&noise=5c5c5c&density=13&opacity=62);
+} */
+body{
+    width: 100vw;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+body::-webkit-scrollbar{
+    display: none;
 }
 nav{
-    background-color: rgb(20 39 53);
+    background-color: rgba(38, 38, 38, 0.658);
+    color: beige;
     display: flex;
+    width: 99vw;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 3px 10px 3px 10px;
-    position: sticky;
+    padding: 10px;
+    position: fixed;
     top: 0px;
     z-index: 5;
-}
-nav a{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    text-decoration: none;
-    color: beige;
 }
 .name{
     display: flex;
@@ -35,10 +43,13 @@ nav a{
     align-items: center;
 }
 .sign button{
-    padding: 5px;
+    /* padding: 5px; */
     background-color: rgb(46, 87, 139);
     color: rgb(237, 252, 247);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    border: none;
+    font-size: 1rem;
+    padding: 10px 20px;
     border-radius: 7px;
     cursor: pointer;
     margin: 5px;
@@ -74,10 +85,22 @@ nav a{
     width: 100%;
     border: none;
 }
+.heading{
+    position:absolute;
+    /* position: absolute; */
+    top: 40%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    text-align: center;
+    font-family:sans-serif;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
 .slider_box{
     position: relative;
-    width: 90%;
-    margin: 0px auto;
+    width: 100vw;
+    /* margin: 0px auto; */
 }
 .slider_box .left{
     position: absolute;
@@ -111,10 +134,14 @@ nav a{
     cursor: pointer;
     z-index: 2;
 }
+.allImgs{
+    width: 100vw;
+}
 .slider{
-    width: 100%;
-    margin: 30px auto;
-    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    /* margin: 30px auto; */
+    overflow: hidden;
 }
 .slide{
     width: fit-content;
@@ -122,14 +149,25 @@ nav a{
     display: inline-flex;
 }
 .slider img{
-    width: 90vw;
+    width: 100vw;
+    /* height: 100vh; */
+}
+.types{
+    display: flex;
+    justify-content: space-around; 
+}
+.logo{
+    width: 10vw;
+    aspect-ratio: 1/1;
+    background-color: antiquewhite;
+    margin: 20px 0 20px;
 }
 .section{
     display: flex;
     flex-direction: column;
     justify-content: left;
     width: 95vw;
-    margin: 10px auto;
+    /* margin: 10px auto; */
     overflow-x: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -137,34 +175,59 @@ nav a{
 .section::-webkit-scrollbar{
     display: none;
 }
+.popCol{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+.viewBth{
+    background-color: rgb(255, 128, 18);
+    width: fit-content;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+}
+
 .list{
-    display: inline-flex;
+    /* display: inline-flex; */
+    display: flex;
     flex-direction: row;
     width: fit-content;
     min-width: 100%;
     margin: 10px 20px 40px 20px;
 }
+.details{
+    padding-left: 20px;
+    font-size: 1.2;
+    display: flex;
+    height: 50%;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .item_box{
-    border: 1px solid black;
-    width: 150px;
+    /* border: 1px solid black; */
+    /* width: fit-content; */
+    background-color: rgb(255, 251, 246);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
-    border-radius: 5px;
+    text-align: center;
+    min-width: 280px;
+    padding: 20px;
+    border-radius: 20px;
     margin-right: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.bookName{
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 .item_box img{
-    width: 80%;
+    width: 160px;
     max-height: auto;
-}
-.error_msg{
-    font-weight: 700;
-    color: red;
-}
-.success_msg{
-    font-weight: 700;
-    color: rgb(0, 163, 0);
 }
 
 
