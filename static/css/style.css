@@ -29,10 +29,12 @@ nav{
     top: 0px;
     z-index: 5;
 }
-.name{
+.name a{
     display: flex;
     flex-direction: row;
     min-width: 200px;
+    color: beige;
+    text-decoration: none;
 }
 .name img{
     height: 40px;
