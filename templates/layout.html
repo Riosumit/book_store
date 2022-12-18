@@ -17,8 +17,13 @@
         </div>
         <div class="sign">
             <img src="{% static 'img/search.png' %}" alt="">
-            <a href="register"><button>Sign Up</button></a>
-            <a href="login"><button>Log In</button></a>
+            {% if loggedin %}
+                <a href="home"><button>Cart</button></a>
+                <a href="logout"><button>LogOut</button></a>
+            {% else %}
+                <a href="register"><button>Sign Up</button></a>
+                <a href="login"><button>Log In</button></a>
+            {% endif %}
         </div>
         <div class="three_line" onclick="three_line()">
             <div class="line"></div>
@@ -27,8 +32,13 @@
         </div>
     </nav>
     <div class="sign_small">
-        <a href="register"><button>Sign Up</button></a><hr>
-        <a href="login"><button>Log In</button></a>
+        {% if loggedin %}
+            <a href="home"><button>Cart</button></a>
+            <a href="logout"><button>LogOut</button></a>
+        {% else %}
+            <a href="register"><button>Sign Up</button></a>
+            <a href="login"><button>Log In</button></a>
+        {% endif %}
     </div>
     {%block body%} {% endblock %}
     <script>
