@@ -25,9 +25,9 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    position: fixed;
     top: 0px;
     z-index: 5;
+    height: 6vh;
 }
 .name a{
     display: flex;
@@ -141,7 +141,7 @@ nav{
 }
 .slider{
     width: 100vw;
-    height: 100vh;
+    height: 94vh;
     /* margin: 30px auto; */
     overflow: hidden;
 }
